@@ -1,13 +1,59 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Fake News Or Nah</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <!--this will be either a banner or css-->
+        <header>
+            <h1>Fake News or Nah</h1>
+        </header>
 
-  </body>
-  <script src="site.js"></script>
-  <script src="randomizer.js"></script>
 
+        <div class="container-fluid">
+
+            <!--this contains the article info and will be draggable-->
+            <div class="card">
+                <img class="card-img-top" id="newsThumb">
+                <div class="card-body">
+                    <h3 class="card-title" id="newsHeadline">Something</h3>
+                </div>
+            </div>
+
+
+            <!--this is where user will make their guess-->
+            <div class="targetAreas">
+                <div class="targetArea" id="targetAreaFake"></div>
+                <div class="targetArea" id="targetAreaNaw"></div>
+            </div>
+                
+            
+            <!--next button to refresh page and allow user to play again, repopulates page-->
+            <button href="#" class="button btn btn-info" id="nextBtn">Next</button>
+        </div>
+
+        
+        <!--scripts-->
+        <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+        <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCCa1Diq2SCpqicbxyZlF8Glr_p8t1B8Zc",
+            authDomain: "project-1-eebe5.firebaseapp.com",
+            databaseURL: "https://project-1-eebe5.firebaseio.com",
+            projectId: "project-1-eebe5",
+            storageBucket: "project-1-eebe5.appspot.com",
+            messagingSenderId: "1087863725621"
+        };
+        firebase.initializeApp(config);
+        </script>
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+        <script src="site.js"></script>
+        <script src="randomizer.js"></script>
+    </body>
 </html>

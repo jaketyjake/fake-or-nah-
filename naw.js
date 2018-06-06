@@ -5,9 +5,7 @@ var i = 0
 let fakearticle ={}
 let nawarticle = {}
 
-
 fetch('https://www.reddit.com/r/TheOnion/new.json?sort=all', {
-
 }).then(function(response){
   return response.json()
 }).then(function(json){
@@ -30,7 +28,6 @@ fetch('https://www.reddit.com/r/TheOnion/new.json?sort=all', {
         <img src="${fakethumb}"/>
         <li>unique id if needed is ${fakeid}</li>
         <li>subreddit-->${fakesub}</li>
-    
     `
     fakediv.innerHTML += articleInfo
     console.log(fakearticle)
@@ -40,9 +37,6 @@ fetch('https://www.reddit.com/r/TheOnion/new.json?sort=all', {
     i = i+ 1
     })
   })
- 
-  
-   
 
 fetch('https://www.reddit.com/r/notTheOnion/new.json?sort=all', {
 
@@ -68,7 +62,6 @@ fetch('https://www.reddit.com/r/notTheOnion/new.json?sort=all', {
         <img src="${nawthumb}"/>
         <li>unique id if needed is ${nawid}</li>
         <li>subreddit-->${nawsub}</li>
-    
     `
     nawdiv.innerHTML += nawrticleInfo
     var database = firebase.database().ref()

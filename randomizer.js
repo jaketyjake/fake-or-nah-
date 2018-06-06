@@ -4,7 +4,6 @@ ref = firebase.database().ref('articles/');
 
 function setupObservers() {
   ref.on('value',function(snapshot){
-    console.log(snapshot.val())
     let articleArray = []
     for(key in snapshot.val()) {
       let articleKeys = snapshot.val()[key]

@@ -1,14 +1,14 @@
-let fakediv= document.getElementById("fake")
-let nawdiv= document.getElementById("naw")
-let fakedata = {}
+// initializing variables
 var i = 0 
 let fakearticle ={}
 let nawarticle = {}
 
+//fetching articles from fake news reddit api
 fetch('https://www.reddit.com/r/TheOnion/new.json?sort=all', {
 }).then(function(response){
   return response.json()
 }).then(function(json){
+// loop to pull specific data from api and add to local dictionary
   json.data.children.forEach(function(fake){
     let fakeid = fake.data.id
     fakearticle.id = fakeid
@@ -19,30 +19,22 @@ fetch('https://www.reddit.com/r/TheOnion/new.json?sort=all', {
     let fakethumb = fake.data.thumbnail
     fakearticle.thumb = fakethumb
     let faketitle = fake.data.title
-    fakeartictitle = faketitle
-    let articleInfo=
-    `<div id=${fake.id}>
-      <ul display-style="none">
-        <li><b>${faketitle}</b></li>
-        <li><a href="${fakeurl}">Link to article on original site</a></li>
-        <img src="${fakethumb}"/>
-        <li>unique id if needed is ${fakeid}</li>
-        <li>subreddit-->${fakesub}</li>
-    `
-    fakediv.innerHTML += articleInfo
-    console.log(fakearticle)
+    fakearticle.title = faketitle
+//create reference to firebase database and send dictionary
     var database = firebase.database().ref()
     var articlesRef = database.child("articles")
+// "i" as child creates node in firebase numbered in sequence
     articlesRef.child(i).set(fakearticle)
     i = i+ 1
     })
   })
 
+//fetching articles from real news reddit api
 fetch('https://www.reddit.com/r/notTheOnion/new.json?sort=all', {
-
 }).then(function(response){
   return response.json()
 }).then(function(json){
+ // loop to pull specific data from api and add to local dictionary 
   json.data.children.forEach(function(naw){
     let nawid = naw.data.id
     nawarticle.id = nawid
@@ -54,18 +46,10 @@ fetch('https://www.reddit.com/r/notTheOnion/new.json?sort=all', {
     nawarticle.thumb = nawthumb
     let nawtitle = naw.data.title
     nawarticle.title = nawtitle
-    let nawrticleInfo=
-    `<div id=${naw.id}>
-      <ul display-style="none">
-        <li><b>${nawtitle}</b></li>
-        <li><a href="${nawurl}">Link to article on original site</a></li>
-        <img src="${nawthumb}"/>
-        <li>unique id if needed is ${nawid}</li>
-        <li>subreddit-->${nawsub}</li>
-    `
-    nawdiv.innerHTML += nawrticleInfo
+//create reference to firebase database and send dictionary
     var database = firebase.database().ref()
     var articlesRef = database.child("articles")
+// "i" as child creates node in firebase numbered in sequence
     articlesRef.child(i).set(nawarticle)
     i = i+1
     })

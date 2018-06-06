@@ -7,18 +7,11 @@ let nawarticle = {}
 
 
 fetch('https://www.reddit.com/r/TheOnion/new.json?sort=all', {
-  /*method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  /*body: JSON.stringify(order)*/
+
 }).then(function(response){
   return response.json()
 }).then(function(json){
-  //console.log(json)\
-  
   json.data.children.forEach(function(fake){
-    //console.log(fake)
     let fakeid = fake.data.id
     fakearticle.id = fakeid
     let fakeurl = fake.data.url
@@ -39,38 +32,24 @@ fetch('https://www.reddit.com/r/TheOnion/new.json?sort=all', {
         <li>subreddit-->${fakesub}</li>
     
     `
-    
-    
-
     fakediv.innerHTML += articleInfo
-    //console.log(fakedata)
     console.log(fakearticle)
     var database = firebase.database().ref()
     var articlesRef = database.child("articles")
-    //var newkey = firebase.database().ref().child('articles').push().key;
-    //var updates = {};
-      //updates[newkey] = fakearticle;
     articlesRef.child(i).set(fakearticle)
     i = i+ 1
     })
-
   })
  
   
    
 
 fetch('https://www.reddit.com/r/notTheOnion/new.json?sort=all', {
-  /*method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-  },
-  /*body: JSON.stringify(order)*/
+
 }).then(function(response){
   return response.json()
 }).then(function(json){
-  //console.log(json)
   json.data.children.forEach(function(naw){
-    //console.log(naw)
     let nawid = naw.data.id
     nawarticle.id = nawid
     let nawurl = naw.data.url
@@ -91,13 +70,9 @@ fetch('https://www.reddit.com/r/notTheOnion/new.json?sort=all', {
         <li>subreddit-->${nawsub}</li>
     
     `
-  
     nawdiv.innerHTML += nawrticleInfo
     var database = firebase.database().ref()
     var articlesRef = database.child("articles")
-    //var newkey = firebase.database().ref().child('articles').push().key;
-    //var updates = {};
-      //updates[newkey] = nawarticle;
     articlesRef.child(i).set(nawarticle)
     i = i+1
     })

@@ -1,0 +1,40 @@
+<html>
+<head>
+        <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+        <link rel="stylesheet" type="text/css" href="naw.css"></link>
+</head>
+
+<body>
+<div id= "fake"/>
+<div id= "naw"/>
+</body>
+
+
+
+<!-- Firebase App is always required and must be first -->
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-app.js"></script>
+
+<!-- Add additional services you want to use -->
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-database.js"></script>
+
+
+<!-- Comment out (or don't include) services you don't want to use -->
+<!-- <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase-storage.js"></script> -->
+
+<script>
+  var config = 
+        {
+    apiKey: "AIzaSyCLxwlLboFqJ2mYxGaSvlmUehlZslE_am8",
+    authDomain: "nawautoupload.firebaseapp.com",
+    databaseURL: "https://nawautoupload.firebaseio.com",
+    projectId: "nawautoupload",
+    storageBucket: "",
+    messagingSenderId: "926741628225"
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+<script src="naw.js"></script>
+</html>

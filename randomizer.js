@@ -18,6 +18,7 @@ function setupObservers() {
 function randomArticle(articleArray) {
   let random = articleArray[Math.floor(Math.random() * articleArray.length)]
   console.log(random)
+  populateCard(random)
 }
 
 setupObservers()

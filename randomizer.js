@@ -60,6 +60,7 @@ function randomArticle(articleArray) {
   let random = articleArray[articleRandom]
   console.log(articleRandom)
   console.log(random)
+  populateCard(random)
 }
 
 

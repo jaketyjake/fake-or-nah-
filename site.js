@@ -1,6 +1,7 @@
 //variables
 let database = firebase.database().ref()
 
+
 let newsThumb = document.getElementById('cardDiv')
 
 
@@ -22,6 +23,7 @@ function populateCard (random) {
 
 populateCard()
 
+
 let articleContainer = document.getElementById("container")
 
 /*-- Event fired on the drag target --*/
@@ -41,7 +43,6 @@ document.addEventListener("dragstart", function(event) {
 /* Events fired on the drop target */
 document.addEventListener("dragover", function(event) {
     event.preventDefault()
-
 })
 //------------------------------------//
 
@@ -70,10 +71,11 @@ document.addEventListener("drop", function(event) {
       notFakeButFake()
       }
 
+    
 }
 
 })
-
+  
 
 function notFakePopup() {
   var myWindow = window.open("", "", "width=(,height=200")

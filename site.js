@@ -2,21 +2,26 @@
 let database = firebase.database().ref()
 
 
+let newsThumb = document.getElementById('cardDiv')
+
+
+
 // populating card from database
 function populateCard (random) {
-  console.log(random)
   cardDiv.innerHTML = ""
-  cardDiv.innerHTML +=
-  `<div class='card'>
-  <img class='card-img-top' id='newsThumb' src='${random.img}'>
-    <div class='card-body'>
-      <h3 class='card-title' id='newsHeadline'>
-        ${random.title}
-      </h3>
-    </div>
-  </div>`  
+  random.forEach(element => {
+    let cardInfo =
+    `<div class='card'>
+      <img class='card-img-top' id='newsThumb' src='${random.thumb}'>
+      <div class='card-body'>
+        <h3 class="card-title" id="newsHeadline">${random.title}</h3>
+      </div>
+    </div>`
+  cardDiv.innerHTML += cardInfo
+  });
 }
 
+populateCard()
 
 
 let articleContainer = document.getElementById("container")
@@ -38,7 +43,6 @@ document.addEventListener("dragstart", function(event) {
 /* Events fired on the drop target */
 document.addEventListener("dragover", function(event) {
     event.preventDefault()
-    
 })
 //------------------------------------//
 
@@ -66,6 +70,7 @@ document.addEventListener("drop", function(event) {
       else {
       notFakeButFake()
       }
+
     
 }
 

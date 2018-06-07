@@ -7,7 +7,7 @@
 <body>
     <div class="droptarget" id="draghome">
         Fake News or Nah
-        
+
         <div draggable="true" id="dragtarget">
         <div id="notTheOnion" >Test(art)icle</div>
         </div>
@@ -21,9 +21,23 @@
 
 </body>
 
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCLxwlLboFqJ2mYxGaSvlmUehlZslE_am8",
+        authDomain: "nawautoupload.firebaseapp.com",
+        databaseURL: "https://nawautoupload.firebaseio.com",
+        projectId: "nawautoupload",
+        storageBucket: "nawautoupload.appspot.com",
+        messagingSenderId: "926741628225"
+      };
+      firebase.initializeApp(config);
+    </script>
 
 
 
 <script src="site.js"></script>
+<script src="naw.js"></script>
+<script src="randomizer.js"></script>
 </html>
-

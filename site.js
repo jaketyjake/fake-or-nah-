@@ -14,16 +14,16 @@ document.addEventListener("drop", function(event) {
   event.target.appendChild(document.getElementById(data))
 
     if(event.target.id == "theOnion"){
-        theOnionPopup(src="ray-TheOnion.html", "", '900', '500')
+        theOnionPopup(src="TheOnion.html", "", '900', '500')
     }
     else {
-        wrongPopup(src="ray-wrong.html", "", '900', '500')
+        wrongPopup(src="wrong.html", "", '900', '500')
     }
     if(event.target.id == "notTheOnion"){
-        notTheOnionPopup(src="ray-notTheOnion.html", "", '900', '500')
+        notTheOnionPopup(src="notTheOnion.html", "", '900', '500')
     }
     else {
-        wrongPopup(src="ray-wrong.html", "", '900', '500')
+        wrongPopup(src="wrong.html", "", '900', '500')
     }
     })
   

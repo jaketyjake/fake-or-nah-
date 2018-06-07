@@ -1,3 +1,6 @@
+
+/* Event fired on the drag target */
+
 //variables
 let database = firebase.database().ref()
 
@@ -27,79 +30,64 @@ populateCard()
 let articleContainer = document.getElementById("container")
 
 /*-- Event fired on the drag target --*/
+
 document.addEventListener("dragstart", function(event) {
   event.dataTransfer.setData("Text", event.target.id)
-  var previousArticle = event.path[1]
-  previousArticle.setAttribute("is_selected_article",false);
-  previousArticle.setAttribute("previously_selected",true);
-
-  var previousClass = previousArticle.className
-  var updatedClass = previousClass.replace("selected_article", " ");
-  previousArticle.className = updatedClass
-
 })
-//------------------------------------//
 
 /* Events fired on the drop target */
 document.addEventListener("dragover", function(event) {
-    event.preventDefault()
-})
-//------------------------------------//
 
-//---------Keep article home----------//
+  event.preventDefault()
+})
+
+document.addEventListener("drop", function(event) {
+  event.preventDefault()
+  var data = event.dataTransfer.getData("Text")
+  event.target.appendChild(document.getElementById(data))
+
+    if(event.target.id == "theOnion"){
+        theOnionPopup(src="TheOnion.html", "", '900', '500')
+    }
+    else {
+        wrongPopup(src="wrong.html", "", '900', '500')
+    }
+    if(event.target.id == "notTheOnion"){
+        notTheOnionPopup(src="notTheOnion.html", "", '900', '500')
+    }
+    else {
+        wrongPopup(src="wrong.html", "", '900', '500')
+    }
+    })
+      
+
+
+})
+  
+function theOnionPopup(url, title, w, h) {
+    var left = (screen.width/2)-(w/2);
+    var top = (screen.height/2)-(h/2);
+    draghome.append(dragtarget)
+    return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
+    
+} 
+
+function notTheOnionPopup(url, title, w, h) {
+    var left = (screen.width/2)-(w/2);
+    var top = (screen.height/2)-(h/2);
+    draghome.append(dragtarget)
+    return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
+  } 
+
+function wrongPopup(url, title, w, h) {
+    var left = (screen.width/2)-(w/2);
+    var top = (screen.height/2)-(h/2);
+    draghome.append(dragtarget)
+    return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
+} 
+
 var draghome = document.getElementById('draghome')
 
 var dragtarget = document.getElementById('dragtarget')
 
 draghome.append(dragtarget)
-//------------------------------------//
-
-document.addEventListener("drop", function(event) {
-    event.preventDefault()
-    var data = event.dataTransfer.getData("Text")
-    event.target.appendChild(document.getElementById(data))
-    if (event.target.id == "false"){
-      notFakePopup()
-    }
-      else {
-      fakeButNotFake()
-
-    if (event.target.id == "true"){
-      fakePopup()
-    }
-      else {
-      notFakeButFake()
-      }
-
-    
-}
-
-})
-  
-
-function notFakePopup() {
-  var myWindow = window.open("", "", "width=(,height=200")
-  myWindow.document.write("<div> FALSE = FALSE </div")
-  draghome.append(dragtarget)
-}
-
-function fakePopup() {
-  var myWindow = window.open("", "", "width=600, height=400")
-  myWindow.document.write("<div> TRUE = TRUE </div>")
-  draghome.append(dragtarget)
-}
-
-function fakeButNotFake(){
-  var myWindow = window.open("", "", "width=600, height=400")
-  myWindow.document.write("<div> FALSE = TRUE </div>")
-  draghome.append(dragtarget)
-}
-
-function notFakeButFake(){
-  var myWindow = window.open("", "", "width=600, height=400")
-  myWindow.document.write("<div>TRUE = FALSE </div>")
-  draghome.append(dragtarget)
-}
-
-let w = window.innerWidth
-let h = window.innerHeight

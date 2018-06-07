@@ -11,23 +11,21 @@ let newsThumb = document.getElementById('cardDiv')
 
 // populating card from database
 function populateCard (random) {
+  console.log(random)
   cardDiv.innerHTML = ""
-  random.forEach(element => {
-    let cardInfo =
-    `<div class='card'>
-      <img class='card-img-top' id='newsThumb' src='${random.thumb}'>
-      <div class='card-body'>
-        <h3 class="card-title" id="newsHeadline">${random.title}</h3>
-      </div>
-    </div>`
-  cardDiv.innerHTML += cardInfo
-  });
+  cardDiv.innerHTML +=
+  `<div class='card droptarget ${random.subreddit}' id='draghome' draggable='true'>
+  <img class='card-img-top' id='newsThumb' src='${random.img}'>
+    <div class='card-body'>
+      <h3 class='card-title' id='newsHeadline'>
+        ${random.title}
+      </h3>
+    </div>
+  </div>`
 }
 
-populateCard()
-
-
 let articleContainer = document.getElementById("container")
+
 
 /*-- Event fired on the drag target --*/
 

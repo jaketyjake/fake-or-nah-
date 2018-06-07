@@ -1,10 +1,43 @@
+
 /* Event fired on the drag target */
+
+//variables
+let database = firebase.database().ref()
+
+
+let newsThumb = document.getElementById('cardDiv')
+
+
+
+// populating card from database
+function populateCard (random) {
+  cardDiv.innerHTML = ""
+  random.forEach(element => {
+    let cardInfo =
+    `<div class='card'>
+      <img class='card-img-top' id='newsThumb' src='${random.thumb}'>
+      <div class='card-body'>
+        <h3 class="card-title" id="newsHeadline">${random.title}</h3>
+      </div>
+    </div>`
+  cardDiv.innerHTML += cardInfo
+  });
+}
+
+populateCard()
+
+
+let articleContainer = document.getElementById("container")
+
+/*-- Event fired on the drag target --*/
+
 document.addEventListener("dragstart", function(event) {
   event.dataTransfer.setData("Text", event.target.id)
 })
 
 /* Events fired on the drop target */
 document.addEventListener("dragover", function(event) {
+
   event.preventDefault()
 })
 
@@ -26,6 +59,10 @@ document.addEventListener("drop", function(event) {
         wrongPopup(src="wrong.html", "", '900', '500')
     }
     })
+      
+
+
+})
   
 function theOnionPopup(url, title, w, h) {
     var left = (screen.width/2)-(w/2);

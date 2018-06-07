@@ -14,7 +14,7 @@ function populateCard (random) {
   console.log(random)
   cardDiv.innerHTML = ""
   cardDiv.innerHTML +=
-  `<div class='card droptarget ${random.subreddit}' id='draghome' draggable='true'>
+  `<div class='card droptarget ${random.subreddit}' id='dragtarget' draggable='true'>
   <img class='card-img-top' id='newsThumb' src='${random.img}'>
     <div class='card-body'>
       <h3 class='card-title' id='newsHeadline'>
@@ -38,30 +38,37 @@ document.addEventListener("dragover", function(event) {
   event.preventDefault()
 })
 
+function onionDetector(random) {
 document.addEventListener("drop", function(event) {
   event.preventDefault()
   var data = event.dataTransfer.getData("Text")
   event.target.appendChild(document.getElementById(data))
-
-    if(event.target.id == "theOnion"){
+  
+console.log(random.subreddit)
+    if(`${random.subreddit}` == "TheOnion"){
+        // alert('this is the onion')
         theOnionPopup(src="TheOnion.html", "", '900', '500')
     }
     else {
+      // alert('this is the not onion')
         wrongPopup(src="wrong.html", "", '900', '500')
     }
-    if(event.target.id == "notTheOnion"){
+    if(`${random.subreddit}` == "nottheonion"){
+      // alert('this is the notonion')
         notTheOnionPopup(src="notTheOnion.html", "", '900', '500')
     }
     else {
+      // alert('this is the onion')
         wrongPopup(src="wrong.html", "", '900', '500')
     }
 })
+}
 
 
 function theOnionPopup(url, title, w, h) {
     var left = (screen.width/2)-(w/2);
     var top = (screen.height/2)-(h/2);
-    draghome.append(dragtarget)
+    // draghome.append(dragtarget)
     return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
 
 }
@@ -69,18 +76,18 @@ function theOnionPopup(url, title, w, h) {
 function notTheOnionPopup(url, title, w, h) {
     var left = (screen.width/2)-(w/2);
     var top = (screen.height/2)-(h/2);
-    draghome.append(dragtarget)
+    // draghome.append(dragtarget)
     return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
   }
 
 function wrongPopup(url, title, w, h) {
     var left = (screen.width/2)-(w/2);
     var top = (screen.height/2)-(h/2);
-    draghome.append(dragtarget)
+    // draghome.append(dragtarget)
     return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
 }
 
-var draghome = document.getElementById('draghome')
+var draghome = document.querySelector('draghome')
 
 var dragtarget = document.getElementById('dragtarget')
 

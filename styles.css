@@ -1,14 +1,5 @@
-.droptarget {
-    float: left;
-    width: 150px;
-    height: 75px;
-    margin: 100px;
-    padding: 10px;
-    border: 1px dotted #aaaaaa;
-  }
 
-
-  .pageTitle {
+.pageTitle {
     color: #55c57a;
     background-color: white;
     background-size: cover;

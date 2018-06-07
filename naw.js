@@ -10,6 +10,8 @@ fetch('https://www.reddit.com/r/TheOnion/new.json?sort=all', {
 }).then(function(json){
 // loop to pull specific data from api and add to local dictionary
   json.data.children.forEach(function(fake){
+    let fakeImg = fake.data.preview.images[0].source.url
+    fakearticle.img = fakeImg
     let fakeid = fake.data.id
     fakearticle.id = fakeid
     let fakeurl = fake.data.url
@@ -36,6 +38,8 @@ fetch('https://www.reddit.com/r/notTheOnion/new.json?sort=all', {
 }).then(function(json){
  // loop to pull specific data from api and add to local dictionary 
   json.data.children.forEach(function(naw){
+    let nawImg = naw.data.preview.images[0].source.url
+    nawarticle.img = nawImg
     let nawid = naw.data.id
     nawarticle.id = nawid
     let nawurl = naw.data.url

@@ -1,5 +1,6 @@
 
 
+
 let ref = firebase.database().ref('articles');
 /*
 let articleRandom = Math.floor(Math.random() * 49)
@@ -68,3 +69,4 @@ setTimeout(function() {
   setupObservers()
 },
 500)
+

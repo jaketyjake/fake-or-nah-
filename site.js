@@ -1,4 +1,5 @@
 
+
 /* Event fired on the drag target */
 
 //variables
@@ -6,7 +7,6 @@ let database = firebase.database().ref()
 
 
 let newsThumb = document.getElementById('cardDiv')
-
 
 
 // populating card from database
@@ -24,7 +24,6 @@ function populateCard (random) {
   </div>`
 }
 
-let articleContainer = document.getElementById("container")
 
 
 /*-- Event fired on the drag target --*/
@@ -86,3 +85,4 @@ var draghome = document.getElementById('draghome')
 var dragtarget = document.getElementById('dragtarget')
 
 draghome.append(dragtarget)
+

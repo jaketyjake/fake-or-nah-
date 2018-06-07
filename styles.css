@@ -1,0 +1,29 @@
+.droptarget {
+  float: left; 
+  width: 175px; 
+  height: 175px;
+  margin: 75px;
+  padding: 10px;
+  border: 1px dotted #aaaaaa;
+}
+
+
+.selected_article{
+  position: relative;
+  border: .2rem solid lightblue;
+  background: lightgreen;
+}
+
+.article_prompt{
+
+  position: absolute;
+  left: 110%;
+  top: 0;
+  z-index: 20;
+  background: white;
+  height: auto;
+  padding: .5rem;
+  border: .2rem solid grey;
+  border-radius: .5rem;
+
+}

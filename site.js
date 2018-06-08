@@ -25,26 +25,15 @@ function populateCard (random) {
 }
 
 /*-- Event fired on the drag target --*/
-let targetAreaFake = document.getElementById('targetAreaFake')
-let targetAreaNaw = document.getElementById('targetAreaNaw')
+let buttonFake = document.getElementById('buttonFake')
+let buttonNaw = document.getElementById('buttonNaw')
 
-document.addEventListener("dragstart", function(event) {
-  event.dataTransfer.setData("Text", event.target.id)
-})
+buttonFake.addEventListener("click", onionDetector(random))
 
 /* Events fired on the drop target */
-document.addEventListener("dragover", function(event) {
-
-  event.preventDefault()
-})
+buttonNaw.addEventListener("click", notTheOnionDetector(random))
 
 function onionDetector(random) {
-  targetAreaFake.addEventListener("drop", function(event) {
-    event.preventDefault()
-    var data = event.dataTransfer.getData("Text")
-    event.target.appendChild(document.getElementById(data))
-    
-    console.log(random.subreddit)
       if(`${random.subreddit}` == "TheOnion"){
           // alert('this is the onion')
           theOnionPopup(src="TheOnion.html", "", '900', '500')
@@ -53,16 +42,9 @@ function onionDetector(random) {
         // alert('this is the not onion')
           wrongPopup(src="wrong.html", "", '900', '500')
       }
-  })
   }
   
   function notTheOnionDetector(random) {
-    targetAreaNaw.addEventListener("drop", function(event) {
-      event.preventDefault()
-      var data = event.dataTransfer.getData("Text")
-      event.target.appendChild(document.getElementById(data))
-      
-      console.log(random.subreddit)
         if(`${random.subreddit}` == "nottheonion"){
             // alert('this is the onion')
             notTheOnionPopup(src="notTheOnion.html", "", '900', '500')
@@ -71,7 +53,6 @@ function onionDetector(random) {
           // alert('this is the not onion')
             wrongPopup(src="wrong.html", "", '900', '500')
     }
-  })
   }
 
 function theOnionPopup(url, title, w, h) {

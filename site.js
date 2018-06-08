@@ -14,7 +14,7 @@ function populateCard (article) {
   console.log(article)
   cardDiv.innerHTML = ""
   cardDiv.innerHTML +=
-  `<div class='card droptarget ${article.subreddit}' id='dragtarget' draggable='true'>
+  `<div class='card droptarget shadow-lg ${article.subreddit}' id='dragtarget' draggable='true'>
   <img class='card-img-top' id='newsThumb' src='${article.img}'>
     <div class='card-body'>
       <h3 class='card-title' id='newsHeadline'>

@@ -28,10 +28,14 @@ function populateCard (article) {
 let buttonFake = document.getElementById('buttonFake')
 let buttonNaw = document.getElementById('buttonNaw')
 
-buttonFake.addEventListener("click", onionDetector(article))
+buttonFake.addEventListener("click", function(){
+  onionDetector(article)
+})
 
 /* Events fired on the drop target */
-buttonNaw.addEventListener("click", notTheOnionDetector(article))
+buttonNaw.addEventListener("click", function() {
+  notTheOnionDetector(article)
+})
 
 function onionDetector(article) {
       if(`${article.subreddit}` == "TheOnion"){
@@ -43,7 +47,7 @@ function onionDetector(article) {
           wrongPopup(src="wrong.html", "", '900', '500')
       }
   }
-  
+
   function notTheOnionDetector(article) {
         if(`${article.subreddit}` == "nottheonion"){
             // alert('this is the onion')
@@ -82,4 +86,3 @@ function wrongPopup(url, title, w, h) {
 // var dragtarget = document.getElementById('dragtarget')
 
 // draghome.append(dragtarget)
-

@@ -25,6 +25,14 @@ aRandoArticle.on('value',function(snapshot){
 
 function renderArticle(article) {
   populateCard(article)
+
+  buttonNaw.addEventListener("click", function() {
+    notTheOnionDetector(article)
+  })
+
+  buttonFake.addEventListener("click", function(){
+    onionDetector(article)
+  })
 }
 
 

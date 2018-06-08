@@ -28,14 +28,6 @@ function populateCard (article) {
 let buttonFake = document.getElementById('buttonFake')
 let buttonNaw = document.getElementById('buttonNaw')
 
-buttonFake.addEventListener("click", function(){
-  onionDetector(article)
-})
-
-/* Events fired on the drop target */
-buttonNaw.addEventListener("click", function() {
-  notTheOnionDetector(article)
-})
 
 function onionDetector(article) {
       if(`${article.subreddit}` == "TheOnion"){

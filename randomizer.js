@@ -1,5 +1,6 @@
 
 
+
 let ref = firebase.database().ref('articles');
 /*
 let articleRandom = Math.floor(Math.random() * 49)
@@ -61,6 +62,8 @@ function randomArticle(articleArray) {
   console.log(articleRandom)
   console.log(random)
   populateCard(random)
+  onionDetector(random)
+  notTheOnionDetector(random)
 }
 
 
@@ -68,3 +71,4 @@ setTimeout(function() {
   setupObservers()
 },
 500)
+

@@ -2,7 +2,7 @@
 
 
 let ref = firebase.database().ref('articles');
-/*
+
 let articleRandom = Math.floor(Math.random() * 49)
 
 
@@ -16,12 +16,27 @@ aRandoArticle.on('value',function(snapshot){
   oneArticle = snapshot.val()
   if(oneArticle && hasGottenArticle == false ){
     hasGottenArticle = true
-    render_article(oneArticle)
+    renderArticle(oneArticle)
 
   }
 
 })
 
+
+function renderArticle(article) {
+  populateCard(article)
+  onionDetector(article)
+  notTheOnionDetector(article)
+}
+
+
+/*
+setTimeout(function() {
+  setupObservers()
+},
+500)
+*/
+/*
 function render_article(article){
 
   var articleTemplate = `
@@ -42,7 +57,7 @@ function render_article(article){
 
 */
 
-
+/*
 function setupObservers() {
   var articleArray = []
   ref.on('value',function(snapshot){
@@ -71,4 +86,4 @@ setTimeout(function() {
   setupObservers()
 },
 500)
-
+*/

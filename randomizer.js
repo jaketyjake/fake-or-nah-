@@ -63,6 +63,7 @@ function randomArticle(articleArray) {
   console.log(random)
   populateCard(random)
   onionDetector(random)
+  notTheOnionDetector(random)
 }
 
 

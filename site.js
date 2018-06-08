@@ -10,15 +10,15 @@ let newsThumb = document.getElementById('cardDiv')
 
 
 // populating card from database
-function populateCard (random) {
-  console.log(random)
+function populateCard (article) {
+  console.log(article)
   cardDiv.innerHTML = ""
   cardDiv.innerHTML +=
-  `<div class='card droptarget ${random.subreddit}' id='dragtarget' draggable='true'>
-  <img class='card-img-top' id='newsThumb' src='${random.img}'>
+  `<div class='card droptarget ${article.subreddit}' id='dragtarget' draggable='true'>
+  <img class='card-img-top' id='newsThumb' src='${article.img}'>
     <div class='card-body'>
       <h3 class='card-title' id='newsHeadline'>
-        ${random.title}
+        ${article.title}
       </h3>
     </div>
   </div>`
@@ -28,13 +28,13 @@ function populateCard (random) {
 let buttonFake = document.getElementById('buttonFake')
 let buttonNaw = document.getElementById('buttonNaw')
 
-buttonFake.addEventListener("click", onionDetector(random))
+buttonFake.addEventListener("click", onionDetector(article))
 
 /* Events fired on the drop target */
-buttonNaw.addEventListener("click", notTheOnionDetector(random))
+buttonNaw.addEventListener("click", notTheOnionDetector(article))
 
-function onionDetector(random) {
-      if(`${random.subreddit}` == "TheOnion"){
+function onionDetector(article) {
+      if(`${article.subreddit}` == "TheOnion"){
           // alert('this is the onion')
           theOnionPopup(src="TheOnion.html", "", '900', '500')
       }
@@ -44,8 +44,8 @@ function onionDetector(random) {
       }
   }
   
-  function notTheOnionDetector(random) {
-        if(`${random.subreddit}` == "nottheonion"){
+  function notTheOnionDetector(article) {
+        if(`${article.subreddit}` == "nottheonion"){
             // alert('this is the onion')
             notTheOnionPopup(src="notTheOnion.html", "", '900', '500')
         }

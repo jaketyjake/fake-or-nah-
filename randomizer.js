@@ -25,8 +25,6 @@ aRandoArticle.on('value',function(snapshot){
 
 function renderArticle(article) {
   populateCard(article)
-  onionDetector(article)
-  notTheOnionDetector(article)
 }
 
 

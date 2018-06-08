@@ -90,3 +90,19 @@ h1 {
     flex-grow: 1;
     border-color: white;
 }
+<<<<<<< HEAD
+
+
+#fakeNewsContainer {
+  display: flex;
+  align-content: center;
+}
+
+
+#fakeNewsImage {
+  height: 500px;
+  width: 900px;
+  margin: -5px;
+}
+=======
+>>>>>>> ed968da86dbc1cf0d16b0821f8897bb87da70af5

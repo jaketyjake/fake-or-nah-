@@ -1,29 +1,84 @@
-.droptarget {
-  float: left; 
-  width: 175px; 
-  height: 175px;
-  margin: 75px;
-  padding: 10px;
-  border: 1px dotted #aaaaaa;
+
+.pageTitle {
+    color: #55c57a;
+    background-color: white;
+    background-size: cover;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
 }
 
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: white;
+    background-image:linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 131, 0.8)), url(newspaper.jpg);
+    height:100vh;
+    background-size: cover;
+    background-position: top;
 
-.selected_article{
+}
+
+h1 {
+    font-size: 3em;
+}
+
+.card {
+    background-color: white;
+    border-color: #28b485;
+    border-width: .2em;
+}
+
+.card-title {
+    text-align: center;
+}
+
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all .2s;
   position: relative;
-  border: .2rem solid lightblue;
-  background: lightgreen;
 }
 
-.article_prompt{
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0,0,0,.2);
+  }
 
-  position: absolute;
-  left: 110%;
-  top: 0;
-  z-index: 20;
-  background: white;
-  height: auto;
-  padding: .5rem;
-  border: .2rem solid grey;
-  border-radius: .5rem;
+.btn::after {
+    content: "";
+    display: inline-flex;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
 
+.btn:hover::after {
+    transform: scaleX(1.4) scaleY(1.6);
+    opacity: 0;
+}
+
+.targetAreas {
+    justify-content: space-evenly;
+}
+
+.targetArea {
+    background-color: #4bad6c;
+    color: white;
+    display: inline-flex;
+    padding: 2rem;
+    font-family: 'Lobster', cursive;
+    flex-grow: 1;
+}
+
+#targetAreaFake {
+    text-align: center;
 }

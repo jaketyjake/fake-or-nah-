@@ -38,8 +38,9 @@ fetch('https://www.reddit.com/r/notTheOnion/new.json?sort=all', {
 }).then(function(json){
  // loop to pull specific data from api and add to local dictionary 
   json.data.children.forEach(function(naw){
+    if (naw.data && naw.data.preview){
     let nawImg = naw.data.preview.images[0].source.url
-    nawarticle.img = nawImg
+    nawarticle.img = nawImg}
     let nawid = naw.data.id
     nawarticle.id = nawid
     let nawurl = naw.data.url
@@ -50,12 +51,14 @@ fetch('https://www.reddit.com/r/notTheOnion/new.json?sort=all', {
     nawarticle.thumb = nawthumb
     let nawtitle = naw.data.title
     nawarticle.title = nawtitle
+
 //create reference to firebase database and send dictionary
     var database = firebase.database().ref()
     var articlesRef = database.child("articles")
 // "i" as child creates node in firebase numbered in sequence
     articlesRef.child(i).set(nawarticle)
     i = i+1
+   
     })
   })
 

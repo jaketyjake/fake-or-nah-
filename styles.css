@@ -17,6 +17,7 @@ a {
 
 a:hover {
     text-decoration: none;
+    color: white;
 }
 
 body {
@@ -86,7 +87,6 @@ h1 {
 .guessDiv {
     justify-content: space-between;
     display: inline;
-    box-shadow: 8px 7px 20px 10px black;
 }
 
 .btn-guess {
@@ -97,7 +97,7 @@ h1 {
     font-family: 'Lobster', cursive;
     flex-grow: 1;
     border-color: white;
-    font-size: 2.5rem;
+    font-size: 2.5rem
 }
 
 #fakeNewsContainer {

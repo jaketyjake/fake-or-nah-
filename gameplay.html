@@ -11,18 +11,20 @@
     <body>
         <div class="container">
             <div class="row">
-                <div class="offset-1 col-10 col-sm-12">
+                <div class="offset-sm-1 col-sm-10">
 
                     <div class="content-box mt-3">
                         <!--this will be either a banner or css-->
+                        <a href="index.html">
                         <div class="pageTitle py-4">
                             <h1>Fake News or Nah</h1>
                         </div>
+                        </a>
 
 
                         <div class="container mt-4 mb-8">
                             <div class="row">
-                                <div class="offset-2 col-8">
+                                <div class="offset-md-2 col-md-8">
                                     <!--this contains the article info and will be draggable-->
                                     
                                         <div id="cardDiv">
@@ -33,13 +35,13 @@
 
                                     <!--this is where user will make their guess-->
                                     <div class="mt-4 guessDiv">
-                                        <button class="TheOnion btn btn-guess offset-4 col-4 mt-4 shadow-lg mx-auto" id="buttonFake">Fake.</div>
-                                        <button class="nottheonion btn btn-guess col-4 mt-4 shadow-lg mx-auto" id="buttonNaw">Nah.</div>
+                                        <button class="TheOnion btn btn-guess mt-4 shadow-lg offset-1 col-5" id="buttonFake">Fake.</button>
+                                        <button class="nottheonion btn btn-guess mt-4 shadow-lg col-5" id="buttonNaw">Nah.</button>
                                     </div>
                                     
                                 
                                     <!--next button to refresh page and allow user to play again, repopulates page-->
-                                    <button type="button" class="btn btn-block mt-3 mb-8 offset-2 col-8" id="nextBtn" onClick="window.location.reload();">Next</button>
+                                    <button type="button" class="btn mt-3 mb-8 offset-1 col-10" id="nextBtn" onClick="window.location.reload();">Next</button>
                                 </div>
                             </div>
                         </div>

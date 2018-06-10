@@ -8,7 +8,7 @@
     clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
 }
 
-.card-btn {
+.btn-green {
     background-color: #4bad6c;
     color: white;
 }
@@ -19,8 +19,8 @@ a {
 
 body {
     font-family: 'Antic Slab', serif;
-    background-color: white;
-    background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 131, 0.8)), url(newspaper.jpg);
+    background-color: #59C47C;
+    background-image: url(new_newspaper.jpg);
     height:100vh;
     background-size: cover;
     background-position: top;
@@ -30,6 +30,10 @@ body {
 
 h1 {
     font-size: 3em;
+}
+
+.btn-readMore {
+    position: absolute;
 }
 
 .card {
@@ -90,19 +94,15 @@ h1 {
     flex-grow: 1;
     border-color: white;
 }
-<<<<<<< HEAD
-
 
 #fakeNewsContainer {
-  display: flex;
-  align-content: center;
+  display: relative;
 }
-
 
 #fakeNewsImage {
-  height: 500px;
-  width: 900px;
-  margin: -5px;
+  width: 100vw;
 }
-=======
->>>>>>> ed968da86dbc1cf0d16b0821f8897bb87da70af5
+
+#nextBtn {
+    background-color: white;
+}

@@ -24,7 +24,7 @@ body {
     height:100vh;
     background-size: cover;
     background-position: top;
-    
+
 
 }
 
@@ -103,6 +103,8 @@ h1 {
   width: 100vw;
 }
 
+
 #nextBtn {
     background-color: white;
 }
+

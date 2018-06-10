@@ -14,7 +14,7 @@ function populateCard (article) {
   console.log(article)
   cardDiv.innerHTML = ""
   cardDiv.innerHTML +=
-  `<div class='card droptarget ${article.subreddit}' id='dragtarget' draggable='true'>
+  `<div class='card droptarget shadow-lg ${article.subreddit}' id='dragtarget' draggable='true'>
   <img class='card-img-top' id='newsThumb' src='${article.img}'>
     <div class='card-body'>
       <h3 class='card-title' id='newsHeadline'>
@@ -28,58 +28,52 @@ function populateCard (article) {
 let buttonFake = document.getElementById('buttonFake')
 let buttonNaw = document.getElementById('buttonNaw')
 
-buttonFake.addEventListener("click", onionDetector(article))
-
-/* Events fired on the drop target */
-buttonNaw.addEventListener("click", notTheOnionDetector(article))
 
 function onionDetector(article) {
-      if(`${article.subreddit}` == "TheOnion"){
-          // alert('this is the onion')
-          theOnionPopup(src="TheOnion.html", "", '900', '500')
-      }
-      else {
-        // alert('this is the not onion')
-          wrongPopup(src="wrong.html", "", '900', '500')
-      }
+  if(`${article.subreddit}` == "TheOnion"){
+      theOnionPopup()
   }
-  
-  function notTheOnionDetector(article) {
-        if(`${article.subreddit}` == "nottheonion"){
-            // alert('this is the onion')
-            notTheOnionPopup(src="notTheOnion.html", "", '900', '500')
-        }
-        else {
-          // alert('this is the not onion')
-            wrongPopup(src="wrong.html", "", '900', '500')
+  else {
+      wrongPopup()
+  }
+}
+
+function notTheOnionDetector(article) {
+    if(`${article.subreddit}` == "nottheonion"){
+        notTheOnionPopup()
     }
-  }
-
-function theOnionPopup(url, title, w, h) {
-    var left = (screen.width/2)-(w/2);
-    var top = (screen.height/2)-(h/2);
-    // draghome.append(dragtarget)
-    return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
-
+    else {
+        wrongPopup()
+}
 }
 
-function notTheOnionPopup(url, title, w, h) {
-    var left = (screen.width/2)-(w/2);
-    var top = (screen.height/2)-(h/2);
-    // draghome.append(dragtarget)
-    return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
-  }
-
-function wrongPopup(url, title, w, h) {
-    var left = (screen.width/2)-(w/2);
-    var top = (screen.height/2)-(h/2);
-    // draghome.append(dragtarget)
-    return window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
+function theOnionPopup(){
+swal({
+    title: "Good job!",
+    text: "You guessed it! This is an Onion article! FAKE NEWS!",
+    icon: "success",
+    button: "Next",
+}).then(function() {
+  window.location.reload()
+    })
 }
 
-// var draghome = document.querySelector('draghome')
+function notTheOnionPopup(){
+swal({
+    title: "Good job!",
+    text: "You guessed it! This is a REAL article!",
+    icon: "success",
+    button: "Next",
+}).then(function() {
+    window.location.reload()
+  })
+}
 
-// var dragtarget = document.getElementById('dragtarget')
-
-// draghome.append(dragtarget)
-
+function wrongPopup() {
+swal({
+type: 'error',
+icon: 'https://media0.giphy.com/media/3oz8xLd9DJq2l2VFtu/giphy.gif',
+animation: true,
+customClass: 'animated tada'
+})
+}

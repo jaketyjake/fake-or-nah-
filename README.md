@@ -32,7 +32,6 @@ From there, we worked on code to check the source of each article, and from ther
 - [Micah Finley](https://github.com/mjayfinley)
 - [Ray Medalla](https://github.com/rmedalla)
 - [Molly Wood](https://github.com/mollywood)
-## Screenshots
 ## Github Link
 [Fake News Or Nah](https://github.com/jaketyjake/fake-or-nah-)
 

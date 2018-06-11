@@ -71,9 +71,7 @@ swal({
 
 function wrongPopup() {
 swal({
-type: 'error',
 icon: 'https://media0.giphy.com/media/3oz8xLd9DJq2l2VFtu/giphy.gif',
-animation: true,
-customClass: 'animated tada'
+button: "Try Again!",
 })
 }

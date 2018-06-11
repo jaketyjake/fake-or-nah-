@@ -1,5 +1,5 @@
 # Fake or Nah
-[Live Demo](http://fake-news-or-nah.surge.sh/)
+[Live Demo](https://fakeornah.surge.sh/index.html)
 ## Contents
 - What It Is
 - What We Used

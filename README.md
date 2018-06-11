@@ -35,4 +35,4 @@ From there, we worked on code to check the source of each article, and from ther
 ## Screenshots
 ## Github Link
 [Fake News Or Nah](https://github.com/jaketyjake/fake-or-nah-)
-## Code Examples
+
